@@ -8,7 +8,7 @@ from rfml.nn.model import build_model
 from rfml.nn.train import build_trainer, PrintingTrainingListener
 import argparse
 parser = argparse.ArgumentParser(description='RML2016 Training')
-parser.add_argument('--model', default='resnet18', type=str,
+parser.add_argument('--model', default='CNN', type=str,
                     help='resnet18 or conv5 or CNN or CLDNN')
 parser.add_argument('--model_save', default=True, type=bool,
                     help='resnet18 or conv5')
@@ -17,7 +17,7 @@ parser.set_defaults(augment=True)
 global args
 args=parser.parse_args()
 
-train, val, test, le = build_dataset(dataset_name="RML2016.10a", path='rfml/data/RML2016.10a_dict.pkl')
+train, val, test, le = build_dataset(dataset_name="RML2016.10a", path='RFclass_UKhalid/rfml/data/RML2016.10a_dict.pkl')
 print('classes: ', len(le))
 model = build_model(model_name=args.model, input_samples=128, n_classes=11)
 print(model)
