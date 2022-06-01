@@ -18,6 +18,10 @@ global args
 args=parser.parse_args()
 
 train, val, test, le = build_dataset(dataset_name="RML2016.10a", path='RFclass_UKhalid/rfml/data/RML2016.10a_dict.pkl')
+
+print('type of train', type(train))
+
+
 print('classes: ', len(le))
 model = build_model(model_name=args.model, input_samples=128, n_classes=11)
 print(model)
