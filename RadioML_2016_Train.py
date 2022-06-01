@@ -17,9 +17,9 @@ parser.set_defaults(augment=True)
 global args
 args=parser.parse_args()
 
-train, val, test, le = build_dataset(dataset_name="RML2016.10a", path='RFclass_UKhalid/rfml/data/RML2016.10a_dict.pkl')
+train, val, test, le = build_dataset(dataset_name="RML2016.10a", path='RML2016.10a_dict.pkl')
 
-print('type of train', type(train))
+print('type of train', type(train), type(val), type(test), type(le))
 
 
 print('classes: ', len(le))
